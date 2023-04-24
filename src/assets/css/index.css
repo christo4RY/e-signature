@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .input-layout {
+    @apply absolute
+        inset-y-0
+        left-0
+        flex
+        bg-slate-300
+        items-center
+        px-3
+        pointer-events-none;
+  }
+}
