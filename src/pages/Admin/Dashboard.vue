@@ -82,14 +82,17 @@
             <td
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
-              <div class="inline-flex items-center gap-x-3">
+              <router-link
+                to="/admin/document/detail"
+                class="inline-flex items-center gap-x-3 text-blue-500"
+              >
                 <input
                   type="checkbox"
                   class="text-purple-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"
                 />
 
                 <span>#0001</span>
-              </div>
+              </router-link>
             </td>
             <td
               class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap"
@@ -151,14 +154,17 @@
             <td
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
-              <div class="inline-flex items-center gap-x-3">
+              <router-link
+                to="/admin/document/detail"
+                class="inline-flex items-center gap-x-3 text-blue-500"
+              >
                 <input
                   type="checkbox"
                   class="text-purple-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"
                 />
 
-                <span>#0001</span>
-              </div>
+                <span>#0002</span>
+              </router-link>
             </td>
             <td
               class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap"
@@ -220,14 +226,17 @@
             <td
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
-              <div class="inline-flex items-center gap-x-3">
+              <router-link
+                to="/admin/document/detail"
+                class="inline-flex items-center gap-x-3 text-blue-500"
+              >
                 <input
                   type="checkbox"
                   class="text-purple-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"
                 />
 
-                <span>#0001</span>
-              </div>
+                <span>#0003</span>
+              </router-link>
             </td>
             <td
               class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap"

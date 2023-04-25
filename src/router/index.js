@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Register from "./../pages/Auth/Register.vue";
+import Cookies from "js-cookie";
 
 const routes = [
   {
@@ -37,14 +38,15 @@ const routes = [
     name: "admin-documents",
     component: () => import("./../pages/Admin/Document/Index.vue"),
   },
+
   {
     path: "/admin/document/bulk-import",
-    name: "bulk-import",
+    name: "admin-bulk-import",
     component: () => import("./../pages/Admin/Document/BulkImport.vue"),
   },
   {
     path: "/admin/document/upload",
-    name: "document-upload",
+    name: "admin-document-upload",
     component: () => import("./../pages/Admin/Document/Upload.vue"),
   },
   {
@@ -53,9 +55,14 @@ const routes = [
     component: () => import("./../pages/Admin/Document/Send.vue"),
   },
   {
-    path: "/profile",
-    name: "profile",
-    component: () => import("./../pages/Profile.vue"),
+    path: "/admin/profile",
+    name: "admin-profile",
+    component: () => import("./../pages/Admin/Profile.vue"),
+  },
+  {
+    path: "/user/profile",
+    name: "user-profile",
+    component: () => import("./../pages/User/Profile.vue"),
   },
   {
     path: "/admin/document/google-drive",
@@ -64,13 +71,90 @@ const routes = [
   },
   {
     path: "/admin/department",
-    name: "department",
+    name: "admin-department",
     component: () => import("./../pages/Admin/Department/Index.vue"),
   },
   {
     path: "/admin/document/detail",
-    name: "detail",
+    name: "admin-detail",
     component: () => import("./../pages/Admin/Document/Detail.vue"),
+  },
+  {
+    path: "/admin/signature",
+    name: "admin-signature",
+    component: () => import("./../pages/Admin/Signature/Index.vue"),
+  },
+
+  //user
+
+  {
+    path: "/user/documents",
+    name: "user-documents",
+    component: () => import("./../pages/User/Document/Index.vue"),
+  },
+  {
+    path: "/user/document/bulk-import",
+    name: "user-bulk-import",
+    component: () => import("./../pages/User/Document/BulkImport.vue"),
+  },
+  {
+    path: "/user/document/upload",
+    name: "document-upload",
+    component: () => import("./../pages/User/Document/Upload.vue"),
+  },
+  {
+    path: "/user/document/send",
+    name: "document-send",
+    component: () => import("./../pages/User/Document/Send.vue"),
+  },
+  {
+    path: "/user/send",
+    name: "user-send",
+    component: () => import("./../pages/User/Send.vue"),
+  },
+  {
+    path: "/user/input",
+    name: "user-input",
+    component: () => import("./../pages/User/Input.vue"),
+  },
+  {
+    path: "/user/document/google-drive",
+    name: "user-google-drive",
+    component: () => import("./../pages/User/Document/GoogleDrive.vue"),
+  },
+  {
+    path: "/user/signature",
+    name: "user-signature",
+    component: () => import("./../pages/User/Signature/Index.vue"),
+  },
+  {
+    path: "/user/document/detail",
+    name: "user-detail",
+    component: () => import("./../pages/User/Document/Detail.vue"),
+  },
+  {
+    path: "/admin/not-found",
+    name: "admin-not-found",
+    component: () => import("./../pages/Admin/Error.vue"),
+  },
+
+  {
+    path: "/user/not-found",
+    name: "user-not-found",
+    component: () => import("./../pages/User/Error.vue"),
+  },
+
+  {
+    path: "/:pathMatch(.*)",
+    name: "error",
+    beforeEnter: (to, from, next) => {
+      if (Cookies.get("name") == "admin") {
+        console.log("hit");
+        next({ name: "admin-not-found" });
+      } else if (Cookies.get("name") == "user") {
+        next({ name: "user-not-found" });
+      }
+    },
   },
 ];
 

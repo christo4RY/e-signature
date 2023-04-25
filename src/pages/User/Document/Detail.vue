@@ -76,5 +76,5 @@
   </AutheticateLayout>
 </template>
 <script setup>
-import AutheticateLayout from "./../../../layouts/AutheticateLayout.vue";
+import AutheticateLayout from "./../../../layouts/AutheticateUserLayout.vue";
 </script>

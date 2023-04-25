@@ -14,10 +14,12 @@ import GuestLayout from '../../layouts/GuestLayout.vue';
     </template>
     <form @submit.prevent="submit">
       <div>
-        <InputLabel for="email" value="Email" />
+        <InputLabel for="Email" value="Email" />
 
-        <div class="relative">
-          <div class="input-layout">
+        <div class="relative mb-6">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          >
             <svg
               aria-hidden="true"
               class="w-5 h-5 text-slate-500"
@@ -36,19 +38,21 @@ import GuestLayout from '../../layouts/GuestLayout.vue';
           <TextInput
             id="email"
             type="email"
+            class="mt-2 block w-full"
             v-model="form.email"
             required
-            placeholder="name@email.com"
+            placeholder="example@gmail.com"
           />
         </div>
       </div>
 
       <div class="mt-4">
-        <div class="flex justify-between mb-2">
-          <InputLabel for="password" value="Password" />
-        </div>
-        <div class="relative">
-          <div class="input-layout">
+        <InputLabel for="Password" value="Password" />
+
+        <div class="relative mb-6">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -69,7 +73,7 @@ import GuestLayout from '../../layouts/GuestLayout.vue';
             class="mt-2 block w-full"
             v-model="form.password"
             required
-            placeholder="password"
+            placeholder="your password"
           />
         </div>
       </div>
@@ -93,6 +97,7 @@ import TextInput from "../../components/TextInput.vue";
 import AuthButton from "../../components/AuthButton.vue";
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
+import Cookies from "js-cookie";
 
 const router = useRouter();
 const form = reactive({
@@ -101,9 +106,14 @@ const form = reactive({
 });
 
 const submit = () => {
-  if (form.email == "admin@gmail.com") {
+  if (form.email == "admin@signature.com") {
+    Cookies.remove("name");
+    Cookies.set("name", "admin");
     router.push("/admin/dashboard");
-  } else {
+  } else if (form.email == "user@signature.com") {
+    Cookies.remove("name");
+    Cookies.set("name", "user");
+    router.push("/user/documents");
   }
 };
 </script>

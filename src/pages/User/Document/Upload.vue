@@ -1,7 +1,7 @@
 <template>
   <AutheticateLayout
     title="
-   Document Upload"
+     Document Upload"
   >
     <div class="flex justify-center">
       <div class="w-[65%] md:w-[75%]">
@@ -27,12 +27,12 @@
         </div>
         <div class="flex gap-2 px-3">
           <router-link
-            to="/admin/document/send"
+            to="/user/document/send"
             class="px-3 py-1.5 bg-purple-600 text-slate-100 rounded"
             >Send</router-link
           >
           <router-link
-            to="/admin/documents"
+            to="/user/documents"
             class="px-3 py-1.5 bg-purple-600 text-slate-100 rounded"
             >Cancel</router-link
           >
@@ -134,7 +134,7 @@
             <h1 class="text-md">Print</h1>
           </router-link>
           <router-link
-            to="/admin/document/send"
+            to="/user/document/send"
             class="px-2 w-full md:w-auto py-1.5 hover:bg-purple-400 duration-300 bg-purple-300 rounded"
           >
             <svg
@@ -155,7 +155,7 @@
             <h1 class="text-md">Import</h1>
           </router-link>
           <router-link
-            to="/admin/document/google-drive"
+            to="/user/document/google-drive"
             class="px-2 w-full md:w-auto py-1.5 hover:bg-purple-400 duration-300 bg-purple-300 rounded"
           >
             <svg
@@ -194,9 +194,9 @@
     </div>
   </AutheticateLayout>
 </template>
-<script setup>
+  <script setup>
 import { onMounted, ref } from "vue";
-import AutheticateLayout from "./../../../layouts/AutheticateLayout.vue";
+import AutheticateLayout from "./../../../layouts/AutheticateUserLayout.vue";
 import { VueSignaturePad } from "vue-signature-pad";
 const signaturePad = ref(null);
 const signature = ref(null);

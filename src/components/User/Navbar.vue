@@ -103,7 +103,7 @@
                     />
                   </svg>
 
-                  <router-link to="/admin/profile" class="text-purple-500"
+                  <router-link to="/user/profile" class="text-purple-500"
                     >Profile</router-link
                   >
                 </div>
@@ -125,7 +125,9 @@
                     />
                   </svg>
 
-                  <p @click="logout" class="text-purple-500">Logout</p>
+                  <router-link to="/login" class="text-purple-500"
+                    >Logout</router-link
+                  >
                 </div>
               </li>
             </ul>
@@ -135,11 +137,9 @@
     </div>
   </div>
 </template>
-<script setup>
+  <script setup>
 import { ref, onMounted } from "vue";
 import { initFlowbite } from "flowbite";
-import Cookies from "js-cookie";
-import { useRouter } from "vue-router";
 
 onMounted(() => {
   initFlowbite();
@@ -147,10 +147,4 @@ onMounted(() => {
 defineProps({
   title: String,
 });
-const router = useRouter();
-
-const logout = () => {
-  Cookies.remove("name");
-  router.push("/login");
-};
 </script>

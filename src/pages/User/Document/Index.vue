@@ -98,7 +98,7 @@ import AutheticateLayout from '../../layouts/AutheticateLayout.vue';
                   </svg>
 
                   <router-link
-                    to="/admin/document/bulk-import"
+                    to="/user/document/bulk-import"
                     class="text-purple-500"
                     >Bulk Import</router-link
                   >
@@ -122,7 +122,7 @@ import AutheticateLayout from '../../layouts/AutheticateLayout.vue';
                   </svg>
 
                   <router-link
-                    to="/admin/document/upload"
+                    to="/user/document/upload"
                     class="text-purple-500"
                     >Upload PDF</router-link
                   >
@@ -182,7 +182,7 @@ import AutheticateLayout from '../../layouts/AutheticateLayout.vue';
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
               <router-link
-                to="/admin/document/detail"
+                to="/user/document/detail"
                 class="inline-flex items-center gap-x-3 text-blue-500"
               >
                 <input
@@ -308,7 +308,7 @@ import AutheticateLayout from '../../layouts/AutheticateLayout.vue';
   </AutheticateLayout>
 </template>
 <script setup>
-import AutheticateLayout from "./../../../layouts/AutheticateLayout.vue";
+import AutheticateLayout from "./../../../layouts/AutheticateUserLayout.vue";
 import Table from "../../../components/Table.vue";
 import ThCol from "../../../components/ThCol.vue";
 import TdCol from "../../../components/TdCol.vue";
@@ -322,10 +322,10 @@ onMounted(() => {
 });
 
 const edit = () => {
-  router.push("/admin/document/upload");
+  router.push("/user/document/upload");
 };
 
 const send = () => {
-  router.push("/admin/document/send");
+  router.push("/user/document/send");
 };
 </script>

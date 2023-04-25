@@ -53,7 +53,7 @@
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
               <router-link
-                to="/admin/document/detail"
+                to="/user/document/detail"
                 class="inline-flex items-center gap-x-3 text-blue-500"
               >
                 <input
@@ -101,7 +101,7 @@
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
               <router-link
-                to="/admin/document/detail"
+                to="/user/document/detail"
                 class="inline-flex items-center gap-x-3 text-blue-500"
               >
                 <input
@@ -149,8 +149,8 @@
     </div>
   </AutheticateLayout>
 </template>
-<script setup>
-import AutheticateLayout from "./../../layouts/AutheticateLayout.vue";
+  <script setup>
+import AutheticateLayout from "./../../layouts/AutheticateUserLayout.vue";
 import Table from "../../components/Table.vue";
 import ThCol from "../../components/ThCol.vue";
 import TdCol from "../../components/TdCol.vue";

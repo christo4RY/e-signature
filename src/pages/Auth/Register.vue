@@ -13,21 +13,23 @@
       <div>
         <InputLabel for="name" value="Name" />
 
-        <div class="relative">
-          <div class="input-layout">
+        <div class="relative mb-6">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          >
             <svg
-              aria-hidden="true"
-              class="w-5 h-5 text-slate-500"
-              fill="currentColor"
-              viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 text-slate-500"
             >
               <path
-                d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-              ></path>
-              <path
-                d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-              ></path>
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+              />
             </svg>
           </div>
           <TextInput
@@ -42,9 +44,12 @@
       </div>
 
       <div class="mt-4">
-        <InputLabel for="email" value="Email" />
-        <div class="relative">
-          <div class="input-layout">
+        <InputLabel for="Email" value="Email" />
+
+        <div class="relative mb-6">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          >
             <svg
               aria-hidden="true"
               class="w-5 h-5 text-slate-500"
@@ -66,17 +71,18 @@
             class="mt-2 block w-full"
             v-model="form.email"
             required
-            autocomplete="username"
             placeholder="example@gmail.com"
           />
         </div>
       </div>
 
       <div class="mt-4">
-        <InputLabel for="password" value="Password" />
+        <InputLabel for="Password" value="Password" />
 
-        <div class="relative">
-          <div class="input-layout">
+        <div class="relative mb-6">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -91,14 +97,12 @@
               />
             </svg>
           </div>
-
           <TextInput
             id="password"
             type="password"
             class="mt-2 block w-full"
             v-model="form.password"
             required
-            autocomplete="new-password"
             placeholder="your password"
           />
         </div>
@@ -106,8 +110,11 @@
 
       <div class="mt-4">
         <InputLabel for="password_confirmation" value="Confirm Password" />
-        <div class="relative">
-          <div class="input-layout">
+
+        <div class="relative mb-6">
+          <div
+            class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -122,15 +129,13 @@
               />
             </svg>
           </div>
-
           <TextInput
             id="password_confirmation"
             type="password"
             class="mt-2 block w-full"
             v-model="form.password_confirmation"
             required
-            autocomplete="new-password"
-            placeholder="your confirm password"
+            placeholder="your password"
           />
         </div>
       </div>
@@ -153,6 +158,7 @@ import TextInput from "../../components/TextInput.vue";
 import AuthButton from "../../components/AuthButton.vue";
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
+import Cookies from "js-cookie";
 
 const form = reactive({
   name: "",
@@ -165,9 +171,14 @@ const form = reactive({
 const router = useRouter();
 
 const submit = () => {
-  if (form.email == "admin@gmail.com") {
+  if (form.email == "admin@signature.com") {
+    Cookies.remove("name");
+    Cookies.set("name", "admin");
     router.push("/admin/dashboard");
-  } else {
+  } else if (form.email == "user@signature.com") {
+    Cookies.remove("name");
+    Cookies.set("name", "user");
+    router.push("/user/documents");
   }
 };
 </script>

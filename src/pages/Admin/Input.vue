@@ -53,14 +53,17 @@ import AutheticateLayout from '../../layouts/AutheticateLayout.vue';
             <TdCol
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
-              <div class="inline-flex items-center gap-x-3">
+              <router-link
+                to="/admin/document/detail"
+                class="inline-flex items-center gap-x-3 text-blue-500"
+              >
                 <input
                   type="checkbox"
                   class="text-purple-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"
                 />
 
                 <span>#0001</span>
-              </div>
+              </router-link>
             </TdCol>
             <TdCol>
               <div
@@ -98,14 +101,17 @@ import AutheticateLayout from '../../layouts/AutheticateLayout.vue';
             <TdCol
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
-              <div class="inline-flex items-center gap-x-3">
+              <router-link
+                to="/admin/document/detail"
+                class="inline-flex items-center gap-x-3 text-blue-500"
+              >
                 <input
                   type="checkbox"
                   class="text-purple-500 border-gray-300 rounded dark:bg-gray-900 dark:ring-offset-gray-900 dark:border-gray-700"
                 />
 
                 <span>#0002</span>
-              </div>
+              </router-link>
             </TdCol>
             <TdCol>
               <div

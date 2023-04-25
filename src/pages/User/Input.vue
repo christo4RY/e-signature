@@ -1,7 +1,8 @@
 
+import AutheticateLayout from '../../layouts/AutheticateLayout.vue';
 
 <template>
-  <AutheticateLayout title="Send">
+  <AutheticateLayout title="Input">
     <div class="p-3 shadow-md py-5 rounded">
       <Table>
         <template #th>
@@ -43,7 +44,7 @@
             </div>
           </ThCol>
           <ThCol>PDF Name</ThCol>
-          <ThCol> To User </ThCol>
+          <ThCol> From User </ThCol>
           <ThCol> Department </ThCol>
           <ThCol> Date </ThCol>
         </template>
@@ -53,7 +54,7 @@
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
               <router-link
-                to="/admin/document/detail"
+                to="/user/document/detail"
                 class="inline-flex items-center gap-x-3 text-blue-500"
               >
                 <input
@@ -80,7 +81,7 @@
                 />
                 <div>
                   <h2 class="text-sm font-medium text-gray-800 dark:text-white">
-                    AungAung
+                    Arkar
                   </h2>
                 </div>
               </div>
@@ -101,7 +102,7 @@
               class="px-4 py-4 text-sm font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap"
             >
               <router-link
-                to="/admin/document/detail"
+                to="/user/document/detail"
                 class="inline-flex items-center gap-x-3 text-blue-500"
               >
                 <input
@@ -128,7 +129,7 @@
                 />
                 <div>
                   <h2 class="text-sm font-medium text-gray-800 dark:text-white">
-                    KyawKyaw
+                    Mgmg
                   </h2>
                 </div>
               </div>
@@ -150,7 +151,7 @@
   </AutheticateLayout>
 </template>
 <script setup>
-import AutheticateLayout from "./../../layouts/AutheticateLayout.vue";
+import AutheticateLayout from "./../../layouts/AutheticateUserLayout.vue";
 import Table from "../../components/Table.vue";
 import ThCol from "../../components/ThCol.vue";
 import TdCol from "../../components/TdCol.vue";
