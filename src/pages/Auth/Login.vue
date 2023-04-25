@@ -73,7 +73,7 @@ import GuestLayout from '../../layouts/GuestLayout.vue';
             class="mt-2 block w-full"
             v-model="form.password"
             required
-            placeholder="your password"
+            placeholder="•••••••••"
           />
         </div>
       </div>
