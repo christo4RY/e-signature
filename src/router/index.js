@@ -1,12 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Register from "./../pages/Auth/Register.vue";
+import Home from "./../pages/Home.vue";
 import Cookies from "js-cookie";
 
 const routes = [
   {
     path: "/",
+    name: "home",
+    component: Home,
+  },
+  {
+    path: "/register",
     name: "register",
-    component: Register,
+    component: () => import("../pages/Auth/Register.vue"),
   },
   {
     path: "/login",
@@ -51,7 +56,7 @@ const routes = [
   },
   {
     path: "/admin/document/send",
-    name: "document-send",
+    name: "admin-document-send",
     component: () => import("./../pages/Admin/Document/Send.vue"),
   },
   {
@@ -99,12 +104,12 @@ const routes = [
   },
   {
     path: "/user/document/upload",
-    name: "document-upload",
+    name: "user-document-upload",
     component: () => import("./../pages/User/Document/Upload.vue"),
   },
   {
     path: "/user/document/send",
-    name: "document-send",
+    name: "user-document-send",
     component: () => import("./../pages/User/Document/Send.vue"),
   },
   {

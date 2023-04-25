@@ -7,7 +7,7 @@ import GuestLayout from '../../layouts/GuestLayout.vue';
     <template #loginOrRegister>
       <h4 class="text-center mb-4">
         Don't have an account?
-        <router-link to="/" class="text-purple-700 font-medium"
+        <router-link to="/register" class="text-purple-700 font-medium"
           >Signup</router-link
         >
       </h4>
